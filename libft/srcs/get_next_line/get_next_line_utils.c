@@ -6,28 +6,12 @@
 /*   By: rcruz-an <rcruz-an@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:40:28 by rcruz-an          #+#    #+#             */
-/*   Updated: 2023/01/09 12:18:14 by rcruz-an         ###   ########.fr       */
+/*   Updated: 2024/01/15 12:37:45 by rcruz-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-
-/* void	*ft_calloc_gnl(size_t nmemb, size_t size)
-{
-	char	*ptr;
-	int		i;
-	int		n;
-
-	i = 0;
-	n = nmemb * size;
-	ptr = malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	while (n-- > 0)
-		ptr[i++] = '\0';
-	return (ptr);
-} */
 
 int	is_it_the_last_line_gnl(const char *s)
 {
@@ -42,16 +26,6 @@ int	is_it_the_last_line_gnl(const char *s)
 	}
 	return (1);
 }
-
-/* size_t	ft_strlen_gnl(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-} */
 
 size_t	line_length_gnl(char *str)
 {
