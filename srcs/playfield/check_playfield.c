@@ -65,7 +65,7 @@ void	check_playfield(t_root *root)
 		{
 			root->flags.has_init_error = 1;
 			root->flags.is_not_square = 1;
-			break ;
+			return ;
 		}
 		lines++;
 	}

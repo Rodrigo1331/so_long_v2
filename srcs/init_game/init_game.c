@@ -97,6 +97,8 @@ void	init_game(t_root *root)
 	if (root->playfield.lin > 0)
 	{
 		check_playfield(root);
+		if (root->flags.has_init_error == 1)
+			return ;
 		check_elements(root);
 		if (root->flags.has_init_error == 0)
 			flood_fill(root);
