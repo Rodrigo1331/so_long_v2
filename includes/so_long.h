@@ -6,7 +6,7 @@
 /*   By: rcruz-an <rcruz-an@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 00:24:37 by rcruz-an          #+#    #+#             */
-/*   Updated: 2023/10/25 09:48:57 by rcruz-an         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:27:43 by rcruz-an         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@
 
 # define BITS 50
 
-typedef struct s_sprite {
+typedef struct s_sprite
+{
 	char	control;
 	void	*img;
 	char	*addr;
@@ -50,19 +51,22 @@ typedef struct s_quant
 	int	quant_patrol;
 }				t_quant;
 
-typedef struct s_playfield {
+typedef struct s_playfield
+{
 	char	**playfield;
 	char	**playfield_mask;
 	size_t	col;
 	size_t	lin;
 }				t_playfield;
 
-typedef struct s_mlx {
+typedef struct s_mlx
+{
 	void	*mlx;
 	void	*win;
 }				t_mlx;
 
-typedef struct s_map_file {
+typedef struct s_map_file
+{
 	int		fd;
 	char	*path;
 }				t_map_file;
@@ -124,7 +128,8 @@ typedef struct s_counter
 	int	count_floors;
 }				t_counter;
 
-typedef struct root {
+typedef struct root
+{
 	t_mlx		mlx;
 	t_playfield	playfield;
 	t_map_file	map_file;
