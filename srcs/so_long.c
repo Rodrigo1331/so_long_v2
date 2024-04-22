@@ -43,7 +43,7 @@ int	main(int argc, char const *argv[])
 		print_error(&root);
 	root.mlx.mlx = mlx_init();
 	root.mlx.win = mlx_new_window(root.mlx.mlx, \
-		(root.playfield.col - 1) * BITS, (root.playfield.lin + 1) \
+		(root.playfield.col) * BITS, (root.playfield.lin + 1) \
 		* BITS, "so long");
 	setup_game(&root);
 	mlx_key_hook(root.mlx.win, input, &root);

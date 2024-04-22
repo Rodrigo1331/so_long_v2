@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../includes/so_long.h"
+#include <stdio.h>
 
 void	check_horizontal_borders(t_root *root)
 {
@@ -37,7 +38,7 @@ void	check_vertical_borders(t_root *root)
 	size_t	i;
 	size_t	col;
 
-	col = root->playfield.col - 2;
+	col = root->playfield.col - 1;
 	i = 0;
 	while (i < root->playfield.lin)
 	{
@@ -58,16 +59,26 @@ void	check_playfield(t_root *root)
 	size_t	len;
 
 	len = ft_strlen(root->playfield.playfield[0]);
-	lines = 1;
-	while (lines < root->playfield.lin)
+	lines = root->playfield.lin;
+	if (lines > 0)
 	{
+		lines--;
+		if ((len - (size_t)1) != ft_strlen(root->playfield.playfield[lines]))
+		{
+			root->flags.has_init_error = 1;
+			root->flags.is_not_square = 1;
+			return ;
+		}
+	}
+	while (lines > 0)
+	{
+		lines--;
 		if (len != ft_strlen(root->playfield.playfield[lines]))
 		{
 			root->flags.has_init_error = 1;
 			root->flags.is_not_square = 1;
 			return ;
 		}
-		lines++;
 	}
 	check_horizontal_borders(root);
 	check_vertical_borders(root);
